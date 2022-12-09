@@ -18,6 +18,7 @@ impl<T> ImpatientMutex<T> {
         }
     }
 
+    #[track_caller]
     pub fn lock(&self) -> LockResult<MutexGuard<'_, T>> {
         for _ in 0..=10 {
             if let Ok(result) = self.mutex.try_lock() {
