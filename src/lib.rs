@@ -2,6 +2,11 @@ use std::sync::{LockResult, Mutex, MutexGuard};
 use std::thread;
 use std::time::Duration;
 
+/// Usage:
+///
+/// ```rust
+/// use impatient_mutex::ImpatientMutex as Mutex;
+/// ```
 pub struct ImpatientMutex<T> {
     mutex: Mutex<T>,
 }
