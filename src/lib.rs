@@ -2,7 +2,7 @@ use std::sync::{LockResult, Mutex, MutexGuard};
 use std::thread;
 use std::time::Duration;
 
-struct ImpatientMutex<T> {
+pub struct ImpatientMutex<T> {
     mutex: Mutex<T>,
 }
 
